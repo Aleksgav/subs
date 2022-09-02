@@ -2,7 +2,8 @@ all: check
 
 check:
 	cargo fmt --check
-	cargo clippy --all-targets
+	cargo clippy --all-targets -- -D warnings
+	cargo audit
 
 test:
 	cargo test
