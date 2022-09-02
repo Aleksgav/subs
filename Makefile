@@ -7,6 +7,9 @@ check:
 test:
 	cargo test
 
+cov:
+	cargo tarpaulin --ignore-tests
+
 release: clean
 	cargo build --release
 	mkdir release
@@ -15,3 +18,6 @@ release: clean
 clean:
 	rm -rf release
 	cargo clean
+
+watch:
+	cargo watch -x check
