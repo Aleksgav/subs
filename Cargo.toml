@@ -7,6 +7,16 @@ edition = "2021"
 
 [dependencies]
 
+# optimization profiles
+[profile.dev]
+debug = true
+opt-level = 0
+
+[profile.release]
+debug = false
+opt-level = 3
+lto = "thin"
+
 # faster linker for MacOS `brew install michaeleisel/zld/zld`
 [target.x86_64-apple-darwin]
 rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
