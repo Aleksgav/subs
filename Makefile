@@ -4,6 +4,7 @@ check:
 	cargo fmt --check
 	cargo clippy --all-targets -- -D warnings
 	cargo audit
+	cargo deny check advisories bans
 
 test:
 	cargo test
