@@ -23,3 +23,6 @@ clean:
 
 watch:
 	cargo watch -x check
+
+expand:
+	cargo +nightly expand
