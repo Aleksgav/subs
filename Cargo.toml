@@ -24,12 +24,5 @@ debug = false
 opt-level = 3
 lto = "thin"
 
-# faster linker for MacOS `brew install michaeleisel/zld/zld`
-[target.x86_64-apple-darwin]
-rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
-
-[target.aarch64-apple-darwin]
-rustflags = ["-C", "link-arg=-fuse-ld=/usr/local/bin/zld"]
-
 [dev-dependencies]
 reqwest = "0.11.11"
