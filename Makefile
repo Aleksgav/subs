@@ -1,9 +1,17 @@
 all: check
 
-check:
-	cargo fmt --check
+check: fmt clippy audit deny
+
+fmt:
+	cargo fmt -- --check
+
+clippy:
 	cargo clippy --all-targets -- -D warnings
+
+audit:
 	cargo audit
+
+deny:
 	cargo deny check advisories bans
 
 test:
