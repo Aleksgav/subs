@@ -1,5 +1,7 @@
 use std::net::TcpListener;
 
+use subs::startup::*;
+
 #[tokio::test]
 async fn health_check_works() {
     let address = spawn_app();
@@ -63,7 +65,7 @@ fn spawn_app() -> String {
     let listener = TcpListener::bind("127.0.0.1:0").expect("Failed to bind random port");
     let port = listener.local_addr().unwrap().port();
 
-    let server = subs::run(listener).expect("Failed to bind address");
+    let server = run(listener).expect("Failed to bind address");
 
     let _ = tokio::spawn(server);
 
