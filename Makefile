@@ -34,3 +34,6 @@ watch:
 
 expand:
 	cargo +nightly expand
+
+migrate:
+	SKIP_DOCKER=true ./scripts/init_db.sh
