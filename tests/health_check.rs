@@ -29,14 +29,13 @@ async fn subscribe_returns_200_for_valid_form_data() {
         .expect("Failed to execute request");
 
     assert_eq!(200, response.status().as_u16());
-
 }
 
 #[tokio::test]
 async fn subscribe_returns_a_400_when_data_is_missing() {
     let app_address = spawn_app();
     let client = reqwest::Client::new();
-    let test_cases= vec![
+    let test_cases = vec![
         ("name=le%20guin", "missing the email"),
         ("email=rusula_le_guin%40gmail.com", "missing the name"),
         ("", "missing both name and emain"),
