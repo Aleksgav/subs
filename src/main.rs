@@ -1,3 +1,5 @@
+#![warn(clippy::all, clippy::pedantic)]
+
 use std::net::TcpListener;
 use subs::run;
 
