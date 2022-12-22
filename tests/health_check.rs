@@ -1,7 +1,7 @@
+use sqlx::{Connection, PgConnection};
 use std::net::TcpListener;
-use sqlx::{PgConnection, Connection};
 
-use subs::{startup::*, configuration::get_configuration};
+use subs::{configuration::get_configuration, startup::*};
 
 #[tokio::test]
 async fn health_check_works() {
