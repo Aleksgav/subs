@@ -35,5 +35,8 @@ watch:
 expand:
 	cargo +nightly expand
 
+udeps:
+	cargo +nightly udeps
+
 migrate:
 	SKIP_DOCKER=true ./scripts/init_db.sh
