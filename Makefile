@@ -15,7 +15,9 @@ deny:
 	cargo deny check advisories bans
 
 test:
-	cargo test
+	# you must be install bunyan before
+	# cargo install bunyan
+	TEST_LOG=true cargo test health_check_works | bunyan
 
 cov:
 	cargo tarpaulin --ignore-tests
