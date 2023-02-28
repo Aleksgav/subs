@@ -89,6 +89,7 @@ async fn spawn_app() -> TestApp {
 
     let server = run(listener, connection_pool.clone()).expect("Failed to bind address");
 
+    #[allow(clippy::let_underscore_future)]
     let _ = tokio::spawn(server);
 
     TestApp {
