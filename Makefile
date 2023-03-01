@@ -42,3 +42,6 @@ udeps:
 
 migrate:
 	SKIP_DOCKER=true ./scripts/init_db.sh
+
+sqlx_prepare:
+	cargo sqlx prepare -- --lib

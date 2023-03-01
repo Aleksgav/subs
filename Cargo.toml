@@ -28,12 +28,13 @@ uuid = { version = "1", features = ["v4"] }
 version = "0.6"
 default-features = false
 features = [
-         "runtime-actix-rustls",
-         "macros",
-         "postgres",
-         "uuid",
          "chrono",
-         "migrate"
+         "macros",
+         "migrate",
+         "offline",
+         "postgres",
+         "runtime-actix-rustls",
+         "uuid",
 ]
 
 # optimization profiles
