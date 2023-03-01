@@ -45,3 +45,9 @@ migrate:
 
 sqlx_prepare:
 	cargo sqlx prepare -- --lib
+
+docker_build:
+	docker build --tag subs --file Dockerfile .
+
+docker_run:
+	docker run -p 8000:8000 subs
